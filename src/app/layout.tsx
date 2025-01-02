@@ -1,4 +1,6 @@
 import './globals.css';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 export const metadata = {
   title: 'Creovora | Empowering Businesses with Modern Web Solutions',
@@ -13,13 +15,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <header className="p-4 bg-darkPurple">
-          <h1 className="text-xl font-bold">Creovora</h1>
-        </header>
+        {/* Include Navbar Component */}
+        <Navbar />
+        
+        {/* Main Content */}
         <main className="p-6">{children}</main>
-        <footer className="p-4 bg-darkPurple text-center">
-          <p>© {new Date().getFullYear()} Creovora. All rights reserved.</p>
-        </footer>
+
+        {/* Include Footer Component */}
+        <Footer />
       </body>
     </html>
   );
