@@ -23,21 +23,23 @@ export default function Navbar() {
         </Link>
 
         {/* Hamburger Button for Mobile */}
-        <button
-          className="block md:hidden focus:outline-none z-50"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <svg
-            className="w-8 h-8"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+        {!isOpen && (
+          <button
+            className="block md:hidden focus:outline-none z-50"
+            onClick={() => setIsOpen(!isOpen)}
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+            <svg
+              className="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        )}
 
         {/* Mobile Menu Overlay */}
         <div
