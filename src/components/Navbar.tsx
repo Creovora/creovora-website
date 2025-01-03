@@ -16,8 +16,8 @@ export default function Navbar() {
           <Image 
             src="/Creovora-text-logo-light-transparent.png" 
             alt="Creovora Logo" 
-            width={150} 
-            height={40} 
+            width={200} 
+            height={60} 
             priority
           />
         </Link>
