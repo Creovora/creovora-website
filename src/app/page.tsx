@@ -38,10 +38,10 @@ export default function HomePage() {
       <div className="max-w-4xl mx-auto py-12 px-6">
         <h2 className="text-3xl font-bold mb-4">What We Offer</h2>
         <ul className="space-y-4">
-          <li>• Website Design: Custom designs that reflect your brand.</li>
-          <li>• Hosting & Maintenance: Reliable uptime and regular updates.</li>
-          <li>• SEO Optimization: Get found on Google with strategic optimization.</li>
-          <li>• E-Commerce Solutions: Build secure, user-friendly online stores.</li>
+          <li><strong>• Website Design:</strong> Custom designs that reflect your brand.</li>
+          <li><strong>• Hosting & Maintenance:</strong> Reliable uptime and regular updates.</li>
+          <li><strong>• SEO Optimization:</strong> Get found on Google with strategic optimization.</li>
+          <li><strong>• E-Commerce Solutions:</strong> Build secure, user-friendly online stores.</li>
         </ul>
       </div>
 
