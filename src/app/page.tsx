@@ -81,14 +81,48 @@ export default function HomePage() {
           Whether you’re starting from scratch or upgrading an existing site, knowing how to choose the right web design partner is essential. Here's a guide to help you make an informed decision.
         </p>
 
-        {/* Table of Contents */}
-        <div className="bg-white shadow p-6 rounded-lg mb-12">
-          <h3 className="text-2xl font-bold mb-4">Table of Contents</h3>
-          <ul className="space-y-2 list-disc pl-6 text-primary">
-            <li><a href="#define-needs" className="hover:underline">Define Your Needs</a></li>
-            <li><a href="#research-agencies" className="hover:underline">Research Agencies</a></li>
-            <li><a href="#evaluate-process" className="hover:underline">Evaluate the Design Process</a></li>
-            <li><a href="#final-decision" className="hover:underline">Making Your Final Decision</a></li>
+      {/* Table of Contents - Improved Styling */}
+      <div className="bg-white shadow p-6 rounded-lg mb-12 border-2 border-primary">
+          <h3 className="text-2xl font-bold text-primary mb-6 text-center">
+            Table of Contents
+          </h3>
+          <ul className="space-y-2">
+            <li>
+              <a
+                href="#define-needs"
+                className="block w-full py-3 px-4 border-b border-lightPurple text-primary font-semibold text-lg text-center rounded-lg transition-all duration-300 ease-in-out 
+                hover:bg-gradient-to-r hover:from-accent hover:to-primary hover:text-white"
+              >
+                Define Your Needs
+              </a>
+            </li>
+            <li>
+              <a
+                href="#research-agencies"
+                className="block w-full py-3 px-4 border-b border-lightPurple text-primary font-semibold text-lg text-center rounded-lg transition-all duration-300 ease-in-out 
+                hover:bg-gradient-to-r hover:from-accent hover:to-primary hover:text-white"
+              >
+                Research Agencies
+              </a>
+            </li>
+            <li>
+              <a
+                href="#evaluate-process"
+                className="block w-full py-3 px-4 border-b border-lightPurple text-primary font-semibold text-lg text-center rounded-lg transition-all duration-300 ease-in-out 
+                hover:bg-gradient-to-r hover:from-accent hover:to-primary hover:text-white"
+              >
+                Evaluate the Design Process
+              </a>
+            </li>
+            <li>
+              <a
+                href="#final-decision"
+                className="block w-full py-3 px-4 text-primary font-semibold text-lg text-center rounded-lg transition-all duration-300 ease-in-out 
+                hover:bg-gradient-to-r hover:from-accent hover:to-primary hover:text-white"
+              >
+                Making Your Final Decision
+              </a>
+            </li>
           </ul>
         </div>
 
