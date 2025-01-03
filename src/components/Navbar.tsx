@@ -11,7 +11,7 @@ export default function Navbar() {
     <nav className="bg-darkPurple text-white p-4 shadow-lg">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         
-        {/* Logo Section with Clickable Logo (Removed Extra Text) */}
+        {/* Logo Section with Clickable Logo */}
         <Link href="/" className="flex items-center space-x-2">
           <Image 
             src="/Creovora-text-logo-light-transparent.png" 
@@ -35,11 +35,7 @@ export default function Navbar() {
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
         </button>
 
@@ -49,26 +45,17 @@ export default function Navbar() {
             isOpen ? "translate-x-0" : "-translate-x-full"
           } transition-transform duration-300 md:translate-x-0`}
         >
-          <li className="text-center md:text-left">
-            <Link href="/" className="block p-4 hover:text-accent transition-colors">
-              Home
-            </Link>
-          </li>
-          <li className="text-center md:text-left">
-            <Link href="/services" className="block p-4 hover:text-accent transition-colors">
-              Services
-            </Link>
-          </li>
-          <li className="text-center md:text-left">
-            <Link href="/about" className="block p-4 hover:text-accent transition-colors">
-              About
-            </Link>
-          </li>
-          <li className="text-center md:text-left">
-            <Link href="/contact" className="block p-4 hover:text-accent transition-colors">
-              Contact
-            </Link>
-          </li>
+          {["Home", "Services", "About", "Contact"].map((item, index) => (
+            <li key={index} className="text-center md:text-left">
+              <Link 
+                href={`/${item.toLowerCase()}`}
+                className="block py-2 px-4 text-lg font-semibold transition-all duration-300 
+                           rounded-lg hover:bg-accent hover:text-primary hover:shadow-lg"
+              >
+                {item}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
