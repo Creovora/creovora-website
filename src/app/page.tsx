@@ -17,9 +17,10 @@ export default function HomePage() {
         </p>
         <a
           href="/services"
-          className="mt-6 inline-block bg-accent text-black py-2 px-4 rounded hover:bg-lightPurple"
+          className="relative mt-6 inline-block py-3 px-6 text-lg font-bold text-primary bg-accent rounded-lg overflow-hidden group"
         >
-          Explore Our Services
+          <span className="absolute inset-0 bg-white transform translate-y-full -translate-x-full group-hover:translate-y-0 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
+          <span className="relative z-10 group-hover:text-primary">Explore Our Services</span>
         </a>
       </div>
 
@@ -32,6 +33,35 @@ export default function HomePage() {
           <li>• E-Commerce Solutions</li>
           <li>• SEO Optimization</li>
         </ul>
+      </div>
+
+      {/* Testimonials Section */}
+      <div className="bg-lightPurple py-12 rounded-lg">
+        <h2 className="text-3xl font-bold text-center mb-6">What Our Clients Say</h2>
+        <div className="max-w-2xl mx-auto bg-white shadow p-6 rounded">
+          <p className="text-darkPurple">
+            "Creovora transformed my website and brought my business to the next
+            level. Highly recommended!"
+          </p>
+          <span className="block mt-4 font-bold text-primary">
+            - Tony Hanson, Wolf Contracting, Inc.
+          </span>
+        </div>
+      </div>
+
+      {/* Call to Action Section */}
+      <div className="bg-lightPurple text-white py-12 text-center rounded-lg">
+        <h2 className="text-3xl font-bold">Ready to Grow Your Business?</h2>
+        <p className="mt-4">
+          Let’s build the perfect website for your brand. Contact us today!
+        </p>
+        <a
+          href="/contact"
+          className="relative inline-block mt-6 py-4 px-8 text-lg font-bold text-primary bg-accent rounded-lg overflow-hidden group"
+        >
+          <span className="absolute inset-0 bg-white transform translate-y-full -translate-x-full group-hover:translate-y-0 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
+          <span className="relative z-10 group-hover:text-primary">Get in Touch</span>
+        </a>
       </div>
     </div>
   );
