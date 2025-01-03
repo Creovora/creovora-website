@@ -2,17 +2,27 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-darkPurple text-white p-4">
+    <nav className="bg-darkPurple text-white p-4 shadow-lg">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* Logo */}
-        <h1 className="text-2xl font-bold">Creovora</h1>
+        
+        {/* Logo Section with Clickable Logo (Removed Extra Text) */}
+        <Link href="/" className="flex items-center space-x-2">
+          <Image 
+            src="/Creovora-text-logo-light-transparent.png" 
+            alt="Creovora Logo" 
+            width={150} 
+            height={40} 
+            priority
+          />
+        </Link>
 
-        {/* Hamburger Button */}
+        {/* Hamburger Button for Mobile */}
         <button
           className="block md:hidden focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
@@ -29,7 +39,7 @@ export default function Navbar() {
               strokeLinecap="round"
               strokeLinejoin="round"
               d="M4 6h16M4 12h16M4 18h16"
-            ></path>
+            />
           </svg>
         </button>
 
@@ -40,22 +50,22 @@ export default function Navbar() {
           } transition-transform duration-300 md:translate-x-0`}
         >
           <li className="text-center md:text-left">
-            <Link href="/" className="block p-4 hover:text-accent">
+            <Link href="/" className="block p-4 hover:text-accent transition-colors">
               Home
             </Link>
           </li>
           <li className="text-center md:text-left">
-            <Link href="/services" className="block p-4 hover:text-accent">
+            <Link href="/services" className="block p-4 hover:text-accent transition-colors">
               Services
             </Link>
           </li>
           <li className="text-center md:text-left">
-            <Link href="/about" className="block p-4 hover:text-accent">
+            <Link href="/about" className="block p-4 hover:text-accent transition-colors">
               About
             </Link>
           </li>
           <li className="text-center md:text-left">
-            <Link href="/contact" className="block p-4 hover:text-accent">
+            <Link href="/contact" className="block p-4 hover:text-accent transition-colors">
               Contact
             </Link>
           </li>
