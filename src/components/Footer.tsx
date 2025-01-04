@@ -3,10 +3,11 @@ import Image from 'next/image';
 export default function Footer() {
     return (
         <footer className="bg-darkPurple text-white p-6">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between text-center md:text-left">
-                
-                {/* Logo Section */}
-                <div className="flex items-center mb-4 md:mb-0">
+            {/* Grid Layout for Perfect Desktop & Mobile Alignment */}
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center text-center md:text-left gap-4">
+
+                {/* Logo Section (Left Aligned on Desktop) */}
+                <div className="flex justify-center md:justify-start">
                     <Image 
                         src="/Creovora-text-logo-light-transparent.png" 
                         alt="Creovora Logo"
@@ -15,8 +16,8 @@ export default function Footer() {
                     />
                 </div>
 
-                {/* Social Media Section */}
-                <div className="flex space-x-4 mb-4 md:mb-0">
+                {/* Social Media Section (Centered) */}
+                <div className="flex justify-center space-x-4">
                     <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
                         <Image 
                             src="/linkedin-2.svg" 
@@ -37,20 +38,22 @@ export default function Footer() {
                     </a>
                 </div>
 
-                {/* Copyright Section */}
-                <div>
+                {/* Copyright Section (Right Aligned on Desktop) */}
+                <div className="flex justify-center md:justify-end">
                     <p>© {new Date().getFullYear()} Creovora. All rights reserved.</p>
                 </div>
             </div>
 
-            {/* Optional Quick Links and Contact */}
-            <div className="text-center mt-4">
-                <p>
-                    <a href="/about" className="hover:text-accent">About Us</a> | 
-                    <a href="/services" className="hover:text-accent"> Services</a> | 
-                    <a href="/contact" className="hover:text-accent"> Contact</a>
-                </p>
-                <p className="mt-2">Minneapolis, MN | <a href="mailto:info@creovora.com" className="hover:text-accent">info@creovora.com</a></p>
+            {/* Quick Links Section (Centered Below Main Grid) */}
+            <div className="text-center mt-4 space-x-2">
+                <a href="/about" className="hover:text-accent">About Us</a> | 
+                <a href="/services" className="hover:text-accent"> Services</a> | 
+                <a href="/contact" className="hover:text-accent"> Contact</a>
+            </div>
+
+            {/* Contact Info Section (Centered Below Links) */}
+            <div className="text-center mt-2">
+                <p>Minneapolis, MN | <a href="mailto:info@creovora.com" className="hover:text-accent">info@creovora.com</a></p>
             </div>
         </footer>
     );
