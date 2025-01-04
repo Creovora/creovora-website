@@ -18,8 +18,8 @@ export default function RootLayout({
         {/* Include Navbar Component */}
         <Navbar />
         
-        {/* Main Content */}
-        <main className="p-6">{children}</main>
+        {/* Main Content with Added Margin Below Navbar */}
+        <main className="p-6 mt-16">{children}</main>
 
         {/* Include Footer Component */}
         <Footer />

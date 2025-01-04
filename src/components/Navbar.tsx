@@ -1,16 +1,32 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="bg-darkPurple text-white p-4 shadow-lg relative z-50">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
-        
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out ${
+        scrolling ? "bg-darkPurple shadow-lg" : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto flex justify-between items-center p-4">
         {/* Logo Section */}
         <Link href="/" className="flex items-center space-x-2">
           <Image 
@@ -22,7 +38,7 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Hamburger Button for Mobile */}
+        {/* Hamburger Button for Mobile - Hidden when menu is open */}
         {!isOpen && (
           <button
             className="block md:hidden focus:outline-none z-50"
@@ -57,14 +73,14 @@ export default function Navbar() {
 
           {/* Mobile Links */}
           <ul className="space-y-8 text-2xl font-bold text-white text-center">
-            <li><Link href="/" onClick={() => setIsOpen(false)} className="hover:text-accent transition-all">Home</Link></li>
-            <li><Link href="/services" onClick={() => setIsOpen(false)} className="hover:text-accent transition-all">Services</Link></li>
-            <li><Link href="/about" onClick={() => setIsOpen(false)} className="hover:text-accent transition-all">About</Link></li>
-            <li><Link href="/contact" onClick={() => setIsOpen(false)} className="hover:text-accent transition-all">Contact</Link></li>
+            <li><Link href="/" onClick={() => setIsOpen(false)}>Home</Link></li>
+            <li><Link href="/services" onClick={() => setIsOpen(false)}>Services</Link></li>
+            <li><Link href="/about" onClick={() => setIsOpen(false)}>About</Link></li>
+            <li><Link href="/contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
           </ul>
         </div>
 
-        {/* Desktop Navigation Links - Centered Hover Effect */}
+        {/* Desktop Navigation Links */}
         <ul className="hidden md:flex space-x-8 text-lg font-semibold">
           {["Home", "Services", "About", "Contact"].map((item, index) => (
             <li key={index} className="relative group">
@@ -73,7 +89,6 @@ export default function Navbar() {
                 className="relative px-4 py-2 no-underline hover:text-accent transition-all"
               >
                 {item}
-                {/* Hover Line Effect */}
                 <span className="absolute left-0 bottom-0 w-full h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
               </Link>
             </li>
